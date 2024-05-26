@@ -3,6 +3,10 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("androidx.navigation.safeargs.kotlin")
     id("org.jetbrains.kotlin.kapt")
+
+    // hilt
+    id("kotlin-kapt")
+    id("dagger.hilt.android.plugin")
    
 }
 
@@ -67,4 +71,8 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1")
     // activity ktx 1 6 1
     implementation("androidx.activity:activity-ktx:1.6.1")
+
+    //hilt
+    implementation("com.google.dagger:hilt-android:2.44")
+    kapt("com.google.dagger:hilt-android-compiler:2.44")
 }
