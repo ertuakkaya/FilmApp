@@ -13,8 +13,9 @@ import androidx.navigation.fragment.navArgs
 import com.example.filmlerapp.R
 import com.example.filmlerapp.data.entitiy.Filmler
 import com.example.filmlerapp.databinding.FragmentDetayBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class DetayFragment : Fragment() {
 
     private lateinit var binding: FragmentDetayBinding
