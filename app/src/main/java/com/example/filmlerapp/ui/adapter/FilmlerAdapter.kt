@@ -29,7 +29,7 @@ class FilmlerAdapter(var mContext : Context, var filmlerList : List<Filmler>) : 
         val t = holder.tasarim
 
         t.imageViewFilmCard.setImageResource(
-            mContext.resources.getIdentifier(film.film_resim, "drawable", mContext.packageName)
+            mContext.resources.getIdentifier(film.resim, "drawable", mContext.packageName)
         )
 
         // DataBinding ile nesne atama
@@ -37,7 +37,7 @@ class FilmlerAdapter(var mContext : Context, var filmlerList : List<Filmler>) : 
 
 
         t.buttonSepet.setOnClickListener(){
-            Snackbar.make(t.root, "${film.film_ad} sepete eklendi", Snackbar.LENGTH_SHORT)
+            Snackbar.make(t.root, "${film.ad} sepete eklendi", Snackbar.LENGTH_SHORT)
 
 
                 .show()

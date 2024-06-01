@@ -56,7 +56,7 @@ class DetayFragment : Fragment() {
         //binding.toolbarDetay.setTitle(film.film_ad)
 
         // dataBinding ile title verme
-        binding.detayToolbarBaslik = film.film_ad
+        binding.detayToolbarBaslik = film.ad
 
 
 

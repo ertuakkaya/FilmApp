@@ -23,7 +23,7 @@
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbarDetay"
-            app:title="@{FilmlerNesnesi.film_ad}"
+            app:title="@{FilmlerNesnesi.ad}"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="?attr/colorPrimary"
@@ -38,7 +38,7 @@
             android:id="@+id/imageViewFilm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@{FilmlerNesnesi.film_resim}"
+            android:src="@{FilmlerNesnesi.resim}"
             app:layout_constraintBottom_toTopOf="@+id/textViewFiyat"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -51,7 +51,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:text='@{FilmlerNesnesi.film_fiyat + "TL"}'
+            android:text='@{FilmlerNesnesi.fiyat + "TL"}'
             android:textSize="50sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

@@ -7,17 +7,20 @@ plugins {
     // hilt
     id("kotlin-kapt")
     id("dagger.hilt.android.plugin")
+
+    // room
+
    
 }
 
 android {
     namespace = "com.example.filmlerapp"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.filmlerapp"
         minSdk = 24
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -66,11 +69,11 @@ dependencies {
     implementation("androidx.room:room-runtime:2.5.0-beta02")
     kapt("androidx.room:room-compiler:2.5.0-beta02")
 
-    //room ktx 2 4 3
-    implementation("androidx.room:room-ktx:2.4.3")
+//    //room ktx 2 4 3
+//    implementation("androidx.room:room-ktx:2.4.3")
 
-    // licycyle runtime ktx  2 5 1
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.5.1")
+//    // licycyle runtime ktx  2 5 1
+//    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.5.1")
 
 
     // viewmodel  2 5 1
@@ -82,4 +85,20 @@ dependencies {
     implementation("com.google.dagger:hilt-android:2.48.1")
 
     kapt("com.google.dagger:hilt-android-compiler:2.48.1")
+
+
+    //room
+
+//    implementation ("androidx.room:room-runtime:2.5.0-beta02")
+//    kapt("androidx.room:room-compiler:2.5.0-beta02")
+//    implementation("androidx.room:room-ktx:2.4.3")
+//
+//    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.5.1")
+
+
+    implementation ("androidx.room:room-runtime:2.6.1")
+    kapt("androidx.room:room-compiler:2.6.1")
+    implementation("androidx.room:room-ktx:2.6.1")
+
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.1")
 }
