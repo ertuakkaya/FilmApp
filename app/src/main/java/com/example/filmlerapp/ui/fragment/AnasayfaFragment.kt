@@ -13,6 +13,8 @@ import com.example.filmlerapp.data.entitiy.Filmler
 import com.example.filmlerapp.databinding.FragmentAnasayfaBinding
 import com.example.filmlerapp.ui.adapter.FilmlerAdapter
 import com.example.filmlerapp.ui.viewmodel.AnasayfaViewModel
+import com.google.firebase.Firebase
+import com.google.firebase.firestore.firestore
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -48,6 +50,23 @@ class AnasayfaFragment : Fragment() {
             binding.filmlerAdapter = adapter
         }
 
+            // Firebase'e veri eklemek icin tek seferilik calistirildi
+//        val db = Firebase.firestore
+//        val collectionFilmler = db.collection("Filmler")
+//
+//        val f1 = Filmler("", "DJango", "django.png", 24)
+//        val f2 = Filmler("", "Interstellar", "interstellar.png", 32)
+//        val f3 = Filmler("", "Inception", "inception.png", 16)
+//        val f4 = Filmler("", "The Hateful Eight", "thehatefuleight.png", 28)
+//        val f5 = Filmler("", "The Pianist", "thepianist.png", 18)
+//        val f6 = Filmler("", "Anadoluda", "anadoluda.png", 10)
+//
+//        collectionFilmler.document().set(f1)
+//        collectionFilmler.document().set(f2)
+//        collectionFilmler.document().set(f3)
+//        collectionFilmler.document().set(f4)
+//        collectionFilmler.document().set(f5)
+//        collectionFilmler.document().set(f6)
 
         return binding.root
     }

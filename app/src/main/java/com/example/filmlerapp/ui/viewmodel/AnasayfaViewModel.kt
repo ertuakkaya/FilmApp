@@ -27,9 +27,7 @@ class AnasayfaViewModel @Inject constructor(var filmlerRepo: FilmlerRepository):
     }
 
     fun filmleriYukle(){
-        CoroutineScope(Dispatchers.Main).launch {
-            filmlerListesi.value = filmlerRepo.filmleriYukle()
-        }
+        filmlerListesi= filmlerRepo.filmleriYukle()
     }
 
 

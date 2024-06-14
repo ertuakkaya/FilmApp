@@ -7,6 +7,9 @@ plugins {
     // hilt
     id("kotlin-kapt")
     id("dagger.hilt.android.plugin")
+
+    // firebase
+    id("com.google.gms.google-services")
    
 }
 
@@ -82,4 +85,14 @@ dependencies {
     implementation("com.google.dagger:hilt-android:2.48.1")
 
     kapt("com.google.dagger:hilt-android-compiler:2.48.1")
+
+
+    // firebase
+    implementation(platform("com.google.firebase:firebase-bom:33.1.0"))
+    //firestore
+    implementation("com.google.firebase:firebase-firestore:25.0.0")
+
+    // glide
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+
 }

@@ -1,5 +1,6 @@
 package com.example.filmlerapp.ui.fragment
 
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -10,6 +11,9 @@ import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.navArgs
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.GlideException
+import com.bumptech.glide.request.RequestListener
 import com.example.filmlerapp.R
 import com.example.filmlerapp.data.entitiy.Filmler
 import com.example.filmlerapp.databinding.FragmentDetayBinding
@@ -21,25 +25,19 @@ class DetayFragment : Fragment() {
     private lateinit var binding: FragmentDetayBinding
 
 
-    companion object {
-        @JvmStatic
-        @BindingAdapter("android:src")
-        fun setImageViewResource(imageView: ImageView, resourceName: String) {
-            val context = imageView.context
-            val id = context.resources.getIdentifier(resourceName, "drawable", context.packageName)
-            imageView.setImageResource(id)
-        }
-    }
-
+//    companion object {
+//        @JvmStatic
+//        @BindingAdapter("android:src")
+//        fun setImageViewResource(imageView: ImageView, resourceName: String) {
+//            val context = imageView.context
+//            val id = context.resources.getIdentifier(resourceName, "drawable", context.packageName)
+//            imageView.setImageResource(id)
+//        }
+//    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
-        // viewBinding kuruulumu
-        //binding = FragmentDetayBinding.inflate(inflater, container, false)
-
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_detay, container, false)
-
-
 
         val bundle : DetayFragmentArgs by navArgs()
         val film = bundle.film
@@ -47,25 +45,15 @@ class DetayFragment : Fragment() {
         // Data bindingdeki nesneye film nesnesini atama
         binding.filmlerNesnesi = film
 
-
-        // toolbar title
-        // setimage resouce
-        // textview fiyat
-
-        // viewBinding ile title verme
-        //binding.toolbarDetay.setTitle(film.film_ad)
-
         // dataBinding ile title verme
         binding.detayToolbarBaslik = film.film_ad
 
+        // Glide ile resim yükleme
+        val url = "http://kasimadalan.pe.hu/filmler_yeni/resimler/${film.film_resim}"
+        Glide.with(this).load(url).override(500,750).into(binding.imageViewFilm)
 
 
 
-
-
-        //
-        //binding.textViewFiyat.text = "${film.film_fiyat} TL"
-        //binding.filmFiyat = "${film.film_fiyat} TL"
 
         return binding.root
     }

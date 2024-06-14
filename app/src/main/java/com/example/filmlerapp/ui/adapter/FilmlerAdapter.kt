@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.filmlerapp.R
 import com.example.filmlerapp.data.entitiy.Filmler
 import com.example.filmlerapp.databinding.CardTasarimBinding
@@ -28,9 +29,14 @@ class FilmlerAdapter(var mContext : Context, var filmlerList : List<Filmler>) : 
         val film = filmlerList.get(position) // position ile listedeki her bir elemana ulaşırız
         val t = holder.tasarim
 
-        t.imageViewFilmCard.setImageResource(
-            mContext.resources.getIdentifier(film.film_resim, "drawable", mContext.packageName)
-        )
+//        t.imageViewFilmCard.setImageResource(
+//            mContext.resources.getIdentifier(film.film_resim, "drawable", mContext.packageName)
+//        )
+
+        // Glide ile resim yükleme
+        val url = "http://kasimadalan.pe.hu/filmler_yeni/resimler/${film.film_resim}"
+        Glide.with(mContext).load(url).override(500,750).into(t.imageViewFilmCard)
+
 
         // DataBinding ile nesne atama
         t.filmNesnesi = film
